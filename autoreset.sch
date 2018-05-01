@@ -1,0 +1,369 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:autoreset-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Autoreset and flashing circuit for ESP8266 with FTDI interface"
+Date ""
+Rev ""
+Comp ""
+Comment1 "Source: http://www.jce.lu/blog/?p=143"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L BSS84 Q1
+U 1 1 5ADCB32A
+P 5550 4125
+F 0 "Q1" H 5750 4200 50  0000 L CNN
+F 1 "BSS84" H 5750 4125 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 5750 4050 50  0001 L CIN
+F 3 "" H 5550 4125 50  0001 L CNN
+	1    5550 4125
+	1    0    0    1   
+$EndComp
+$Comp
+L 2N7002 Q2
+U 1 1 5ADCB372
+P 6050 4425
+F 0 "Q2" H 6250 4500 50  0000 L CNN
+F 1 "2N7002" H 6250 4425 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 6250 4350 50  0001 L CIN
+F 3 "" H 6050 4425 50  0001 L CNN
+	1    6050 4425
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2N7002 Q3
+U 1 1 5ADCB3C3
+P 7225 4375
+F 0 "Q3" H 7425 4450 50  0000 L CNN
+F 1 "2N7002" H 7425 4375 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 7425 4300 50  0001 L CIN
+F 3 "" H 7225 4375 50  0001 L CNN
+	1    7225 4375
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 5ADCB437
+P 3925 4675
+F 0 "#PWR01" H 3925 4425 50  0001 C CNN
+F 1 "GND" H 3925 4525 50  0000 C CNN
+F 2 "" H 3925 4675 50  0001 C CNN
+F 3 "" H 3925 4675 50  0001 C CNN
+	1    3925 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR02
+U 1 1 5ADCB457
+P 3925 4175
+F 0 "#PWR02" H 3925 4025 50  0001 C CNN
+F 1 "VCC" H 3925 4325 50  0000 C CNN
+F 2 "" H 3925 4175 50  0001 C CNN
+F 3 "" H 3925 4175 50  0001 C CNN
+	1    3925 4175
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1
+U 1 1 5ADCB495
+P 3925 4425
+F 0 "C1" H 3950 4525 50  0000 L CNN
+F 1 "100nF" H 3950 4325 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3963 4275 50  0001 C CNN
+F 3 "" H 3925 4425 50  0001 C CNN
+	1    3925 4425
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 5ADCB574
+P 5250 3875
+F 0 "R1" V 5330 3875 50  0000 C CNN
+F 1 "100k" V 5250 3875 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5180 3875 50  0001 C CNN
+F 3 "" H 5250 3875 50  0001 C CNN
+	1    5250 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5ADCB5FF
+P 5650 4675
+F 0 "R2" V 5730 4675 50  0000 C CNN
+F 1 "100k" V 5650 4675 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5580 4675 50  0001 C CNN
+F 3 "" H 5650 4675 50  0001 C CNN
+	1    5650 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 5ADCB675
+P 6925 4625
+F 0 "R3" V 7005 4625 50  0000 C CNN
+F 1 "100k" V 6925 4625 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6855 4625 50  0001 C CNN
+F 3 "" H 6925 4625 50  0001 C CNN
+	1    6925 4625
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 5ADCB6DA
+P 6600 4625
+F 0 "C2" H 6625 4725 50  0000 L CNN
+F 1 "100nF" H 6625 4525 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6638 4475 50  0001 C CNN
+F 3 "" H 6600 4625 50  0001 C CNN
+	1    6600 4625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 4025 5250 4125
+Wire Wire Line
+	5000 4125 5350 4125
+Wire Wire Line
+	5250 3725 5250 3625
+Wire Wire Line
+	5250 3625 5650 3625
+Wire Wire Line
+	5650 3625 5650 3925
+$Comp
+L VCC #PWR03
+U 1 1 5ADCB89D
+P 5450 3525
+F 0 "#PWR03" H 5450 3375 50  0001 C CNN
+F 1 "VCC" H 5450 3675 50  0000 C CNN
+F 2 "" H 5450 3525 50  0001 C CNN
+F 3 "" H 5450 3525 50  0001 C CNN
+	1    5450 3525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 3525 5450 3625
+Connection ~ 5450 3625
+Wire Wire Line
+	5650 4325 5650 4525
+Wire Wire Line
+	5650 4425 5850 4425
+Connection ~ 5650 4425
+$Comp
+L Conn_01x06 J1
+U 1 1 5ADCBB2C
+P 4725 2825
+F 0 "J1" H 4725 3125 50  0000 C CNN
+F 1 "FTDI in" H 4725 2425 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x06_Pitch2.54mm" H 4725 2825 50  0001 C CNN
+F 3 "" H 4725 2825 50  0001 C CNN
+	1    4725 2825
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Conn_01x06 J2
+U 1 1 5ADCBD7E
+P 6325 2925
+F 0 "J2" H 6325 3225 50  0000 C CNN
+F 1 "Programmer out" H 6325 2525 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x06_Pitch2.54mm" H 6325 2925 50  0001 C CNN
+F 3 "" H 6325 2925 50  0001 C CNN
+	1    6325 2925
+	1    0    0    1   
+$EndComp
+Text Notes 4475 3150 0    60   ~ 0
+GND\nCTS\nVCC\nTXD\nRXD\nRTS
+Text Notes 6400 3150 0    60   ~ 0
+GND\nFLASH\nVCC\nTXD\nRXD\nRESET
+Wire Wire Line
+	3925 4175 3925 4275
+Wire Wire Line
+	3925 4675 3925 4575
+Wire Wire Line
+	6925 4475 6925 4375
+Wire Wire Line
+	6600 4375 7025 4375
+Wire Wire Line
+	6600 4475 6600 4375
+Connection ~ 6925 4375
+Wire Wire Line
+	6600 4775 6600 4875
+Wire Wire Line
+	6600 4875 5800 4875
+Wire Wire Line
+	5800 4875 5800 4425
+Connection ~ 5800 4425
+$Comp
+L GND #PWR04
+U 1 1 5ADCDA73
+P 5650 4925
+F 0 "#PWR04" H 5650 4675 50  0001 C CNN
+F 1 "GND" H 5650 4775 50  0000 C CNN
+F 2 "" H 5650 4925 50  0001 C CNN
+F 3 "" H 5650 4925 50  0001 C CNN
+	1    5650 4925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 4825 5650 4925
+$Comp
+L GND #PWR05
+U 1 1 5ADCDB06
+P 6925 4975
+F 0 "#PWR05" H 6925 4725 50  0001 C CNN
+F 1 "GND" H 6925 4825 50  0000 C CNN
+F 2 "" H 6925 4975 50  0001 C CNN
+F 3 "" H 6925 4975 50  0001 C CNN
+	1    6925 4975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6925 4775 6925 4975
+Wire Wire Line
+	7325 4575 7325 4875
+Wire Wire Line
+	7325 4875 6925 4875
+Connection ~ 6925 4875
+$Comp
+L GND #PWR06
+U 1 1 5ADCDC41
+P 6150 4675
+F 0 "#PWR06" H 6150 4425 50  0001 C CNN
+F 1 "GND" H 6150 4525 50  0000 C CNN
+F 2 "" H 6150 4675 50  0001 C CNN
+F 3 "" H 6150 4675 50  0001 C CNN
+	1    6150 4675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 4625 6150 4675
+Wire Wire Line
+	7325 4175 7325 4075
+Wire Wire Line
+	7225 4075 7425 4075
+Wire Wire Line
+	6150 4225 6150 4125
+Wire Wire Line
+	6150 4125 6250 4125
+Wire Wire Line
+	4925 3125 5000 3125
+Wire Wire Line
+	5000 3125 5000 4125
+Connection ~ 5250 4125
+NoConn ~ 4925 2725
+Text GLabel 6025 2725 0    60   Input ~ 0
+FLASH
+Text GLabel 6250 4125 2    60   Input ~ 0
+FLASH
+Text GLabel 6025 3125 0    60   Input ~ 0
+RESET
+Text GLabel 7225 4075 0    60   Input ~ 0
+RESET
+Wire Wire Line
+	6025 3125 6125 3125
+Wire Wire Line
+	4925 3025 6125 3025
+Wire Wire Line
+	4925 2925 6125 2925
+Wire Wire Line
+	4925 2825 6125 2825
+Wire Wire Line
+	4925 2625 6125 2625
+Wire Wire Line
+	6025 2725 6125 2725
+$Comp
+L SW_Push SW1
+U 1 1 5AE61CF5
+P 7625 4075
+F 0 "SW1" H 7675 4175 50  0000 L CNN
+F 1 "Manual reset" H 7625 4015 50  0000 C CNN
+F 2 "Buttons_Switches_SMD:SW_SPST_PTS645" H 7625 4275 50  0001 C CNN
+F 3 "" H 7625 4275 50  0001 C CNN
+	1    7625 4075
+	1    0    0    -1  
+$EndComp
+Connection ~ 7325 4075
+$Comp
+L GND #PWR07
+U 1 1 5AE620A0
+P 7925 4175
+F 0 "#PWR07" H 7925 3925 50  0001 C CNN
+F 1 "GND" H 7925 4025 50  0000 C CNN
+F 2 "" H 7925 4175 50  0001 C CNN
+F 3 "" H 7925 4175 50  0001 C CNN
+	1    7925 4175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7825 4075 7925 4075
+Wire Wire Line
+	7925 4075 7925 4175
+$Comp
+L GND #PWR?
+U 1 1 5AE782FB
+P 5050 2400
+F 0 "#PWR?" H 5050 2150 50  0001 C CNN
+F 1 "GND" H 5050 2250 50  0000 C CNN
+F 2 "" H 5050 2400 50  0001 C CNN
+F 3 "" H 5050 2400 50  0001 C CNN
+	1    5050 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 2400 5050 2350
+Wire Wire Line
+	5050 2350 5150 2350
+Wire Wire Line
+	5150 2350 5150 2625
+Connection ~ 5150 2625
+$Comp
+L VCC #PWR?
+U 1 1 5AE78487
+P 5250 2450
+F 0 "#PWR?" H 5250 2300 50  0001 C CNN
+F 1 "VCC" H 5250 2600 50  0000 C CNN
+F 2 "" H 5250 2450 50  0001 C CNN
+F 3 "" H 5250 2450 50  0001 C CNN
+	1    5250 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 2450 5250 2825
+Connection ~ 5250 2825
+$EndSCHEMATC
